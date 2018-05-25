@@ -1,0 +1,45 @@
+.friend-list{
+  height:275px ;
+  overflow-y: auto;
+  position: relative;
+  &::-webkit-scrollbar
+  {
+    width: 4px;
+    background-color: white;
+  }
+
+ &::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    background-color: #c4c4c4;
+  }
+
+}
+.friends-list__item{
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 5px;
+  align-items: center;
+  background: white;
+  cursor: pointer;
+ }
+.friends-list__image{
+  width: 45px;
+  height: 45px;
+ }
+.friends-lists__picture{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.friends-list__name{
+  color: #4f4f4f;
+  font-family: fira_sansmedium;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 6px;
+}
+.friend-list__btn{
+  margin-left: auto;
+}

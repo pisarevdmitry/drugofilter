@@ -1,0 +1,53 @@
+.logo{
+  text-align: center;
+  padding-top: 88px;
+}
+.logo__text {
+  font-family: nexa_script;
+  color: #ff9a61;
+  letter-spacing: 0.38px;
+}
+.logo__image{
+  position: relative;
+  top:-9px;
+  left: 9px;
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 2px solid #ff9a61;
+  border-radius: 50%;
+
+}
+.logo__image:before{
+  content: '';
+  width: 35px;
+  height: 2px;
+  background-color: #ff9a61;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%,-50%);
+}
+.logo__image:after{
+  content: '';
+  width: 21px;
+  height: 2px;
+  background-color: #ff9a61;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(100%,-50%);
+}
+.init-app{
+  margin: 0 auto;
+  width: 180px;
+  display: block;
+  color: black;
+  text-decoration: none;
+}
+.vk__image{
+  width: 45px;
+  height: 45px;
+  display: block;
+  margin: 5px auto;
+}

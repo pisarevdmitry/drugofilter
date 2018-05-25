@@ -1,0 +1,24 @@
+.friends-lists{
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-flow: row nowrap;
+
+}
+.friends-lists__item{
+  padding: 0 15px;
+  flex: 1;
+  &:nth-child(1){
+    border-right: 1px solid #f0f0f0;
+  }
+}
+.friends-lists__title{
+  color: #4f4f4f;
+  font-family: fira_sansmedium;
+  font-size: 12px;
+  font-weight: 500;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 0 5px 0;
+  height: 30px;
+
+}
