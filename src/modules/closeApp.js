@@ -3,7 +3,7 @@ class closeApp {
         this.wrapper = document.querySelector('.wrapper');
         this.app = document.querySelector('.App');
         this.initApp = document.querySelector('#init-app');
-        this.saveBtn = document.querySelector('.btn-save');
+        this.saveBtn = document.querySelector('.btn_save');
         this.closeBtn = document.querySelector('#btn-close');
         this.allFriendsResult = document.querySelector('#allFriends-result');
         this.chosenFriendResult = document.querySelector('#chosenFriends-result');
@@ -23,7 +23,7 @@ class closeApp {
     composeFriends(list) {
         let arr= [];
 
-        for (let child of list.children){
+        for (let child of list.children) {
             let [firstName, lastName] = child.querySelector('.friends-list__name').innerText.split(' ');
             let photo100 = child.querySelector('.friends-lists__picture').getAttribute('src');
 

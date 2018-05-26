@@ -8,7 +8,7 @@
   &:hover{
     cursor: pointer;
   }
-  &-small{
+  &_small{
     &:before{
       content: '';
       width: 14px;
@@ -29,17 +29,17 @@
      border-radius: 5px;
     }
   }
-  &-white{
+  &_white{
     &:after,&:before{
       background-color: white;;
     }
   }
-  &-gray{
+  &_gray{
     &:after,&:before{
       background-color: #c4c4c4;;
     }
   }
-  &-cross-45deg{
+  &_cross-45deg{
      &:before{
        transform: translateY(-50%) rotate(45deg);
      }
@@ -47,7 +47,7 @@
        transform: translateY(-50%) rotate(-45deg);
      }
    }
-  &-cross{
+  &_cross{
     &:before{
       transform: translateY(-50%) rotate(90deg);
     }
@@ -55,7 +55,7 @@
       transform: translateY(-50%) ;
     }
   }
-  &-save{
+  &_save{
     padding: 9px 15px;
     background-color: #ff8663;
     border-radius: 12px;
