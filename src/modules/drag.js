@@ -36,7 +36,7 @@ export default class drag {
                 width: `${node.clientWidth}px`,
                 start: false
             };
-            document.addEventListener('mousemove',this.startDrag);
+            document.addEventListener('mousemove', this.startDrag);
             document.addEventListener('mouseup', this.stopDrag)
 
         }
@@ -65,7 +65,8 @@ export default class drag {
         if (!this.state.start) {
             this.abortDrag()
         }
-        if (!this.getParentByClass(document.elementFromPoint(e.pageX,e.pageY),this.targetContainer)) {
+
+        if (!this.getParentByClass(document.elementFromPoint(e.pageX, e.pageY), this.targetContainer)) {
             this.state.parent.insertBefore(this.state.node, this.state.nextSibling);
             this.state.node.style = '';
             this.abortDrag();
@@ -85,6 +86,7 @@ export default class drag {
     }
     abortDrag() {
         this.state = {};
+        document.body.style.userSelect = 'auto';
         document.removeEventListener('mousemove', this.startDrag);
         document.removeEventListener('mouseup', this.stopDrag);
     }
@@ -108,6 +110,7 @@ export default class drag {
                         position: absolute;
                         z-index: 9999;
                         pointer-events:none`;
+        document.body.style.userSelect = 'none';
         document.body.appendChild(node);
     }
     styleElements() {
