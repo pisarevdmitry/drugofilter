@@ -1,6 +1,6 @@
 export default class VKAuth {
     constructor(param) {
-        let { API_KEY, vkParam , responseVersion } = param;
+        let { API_KEY, vkParam ,responseVersion } = param;
 
         this.API_KEY = API_KEY;
         this.vkParam = vkParam;

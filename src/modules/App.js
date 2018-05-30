@@ -1,10 +1,12 @@
 import VKAuth from './Auth'
+import filterFriends from './filterFriends'
+import FriendListDrag from './friendListsDrag'
 
 class App extends VKAuth {
     constructor(param) {
         super(param);
         let {initApp} = param;
-        this.initApp = initApp;
+        this.initApp = document.querySelector('#init-app');
         this.allFriends = {};
         this.chosenFriends = {};
         this.wrapper =  document.querySelector('.wrapper');
@@ -15,12 +17,28 @@ class App extends VKAuth {
         this.templateChosenFriends = document.querySelector('#chosenFriends').textContent;
         this.allFriendsResult = document.querySelector('#allFriends-result');
         this.chosenFriendResult = document.querySelector('#chosenFriends-result');
+        this.chosenFriendsSearch = document.querySelector('#choosenfriends-search');
+        this.allFriendsSearch = document.querySelector('#allfriends-search');
         this.startApp = this.startApp.bind(this);
         this.popup = document.querySelector('.popup');
         this.closeApp = this.closeApp.bind(this);
         this.saveData = this.saveData.bind(this);
         this.closePopup = this.closePopup.bind(this);
-        this.initListener()
+        this.initListener();
+        filterFriends([{
+            target: this.allFriendsSearch,
+            result: this.allFriendsResult
+        }, {
+            target: this.chosenFriendsSearch,
+            result: this.chosenFriendResult
+        }]);
+        new FriendListDrag({
+            container: document.querySelector('.friends-lists'),
+            target: {
+                class: 'friends-list__item',
+                container: 'friend-list',
+            }
+        });
     }
     initListener() {
         this.initApp.addEventListener('click', this.startApp)
