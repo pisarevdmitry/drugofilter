@@ -3,12 +3,14 @@ class closeApp {
         this.wrapper = document.querySelector('.wrapper');
         this.app = document.querySelector('.App');
         this.initApp = document.querySelector('#init-app');
-        this.saveBtn = document.querySelector('.btn_save');
+        this.saveBtn = document.querySelector('#btn_save');
         this.closeBtn = document.querySelector('#btn-close');
         this.allFriendsResult = document.querySelector('#allFriends-result');
         this.chosenFriendResult = document.querySelector('#chosenFriends-result');
+        this.popup = document.querySelector('.popup');
         this.closeApp = this.closeApp.bind(this);
         this.saveData = this.saveData.bind(this);
+        this.closePopup = this.closePopup.bind(this);
         this.initListeners();
     }
     saveData() {
@@ -16,9 +18,8 @@ class closeApp {
 
         allFriends = this.composeFriends(this.allFriendsResult);
         chosenFriends = this.composeFriends(this.chosenFriendResult);
-        localStorage.setItem('myFriends', JSON.stringify({ allFriends, chosenFriends }))
-        this.closeApp();
-        alert('Данные сохранены');
+        localStorage.setItem('myFriends', JSON.stringify({ allFriends, chosenFriends }));
+        this.popup.classList.remove('hidden');
     }
     composeFriends(list) {
         let arr= [];
@@ -41,10 +42,16 @@ class closeApp {
         this.app.classList.add('hidden');
         this.initApp.classList.remove('hidden');
     }
-
+    closePopup(e) {
+        if (e.target.tagName === 'BUTTON') {
+            this.popup.classList.add('hidden');
+            this.closeApp()
+        }
+    }
     initListeners() {
         this.saveBtn.addEventListener('click', this.saveData);
         this.closeBtn.addEventListener('click', this.closeApp);
+        this.popup.addEventListener('click', this.closePopup)
     }
 }
 

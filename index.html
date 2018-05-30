@@ -45,14 +45,17 @@
                 </li>
             </ul>
             <footer class="footer">
-                <button class="btn_save btn">Сохранить</button>
+                <button class="btn_orange btn" id="btn_save">Сохранить</button>
             </footer>
         </div>
-
+    </div>
+    <div class="popup hidden">
+        <span>Данные сохранены</span>
+        <button class= "btn btn_orange">Закрыть</button>
     </div>
     <script id="allFriends" type="text/x-handlebars-template">
           {{#each items}}
-                <li class="friends-list__item">
+                <li class="friends-list__item"data-id={{id}}>
                     <div class="friends-list__image">
                         <img class="friends-lists__picture" src="{{photo_100}}">
                     </div>
@@ -63,7 +66,7 @@
     </script>
     <script id="chosenFriends" type="text/x-handlebars-template">
         {{#each items}}
-            <li class="friends-list__item">
+            <li class="friends-list__item" data-id={{id}} >
                 <div class="friends-list__image">
                     <img class="friends-lists__picture" src="{{photo_100}}">
                 </div>

@@ -8,4 +8,5 @@ import './components/search.scss';
 import './components/friends-lists.scss';
 import './components/friends-list.scss';
 import './components/footer.scss';
+import './components/popup.scss'
 import './general/common.scss';

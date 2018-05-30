@@ -11,7 +11,7 @@ const chosenFriendsSearch = document.querySelector('#choosenfriends-search');
 const allFriendsResult = document.querySelector('#allFriends-result');
 const chosenFriendResult = document.querySelector('#chosenFriends-result');
 
-startApp({
+ startApp({
     API_KEY: 5350105,
     vkParam: 2,
     responseVersion: '5.76',
