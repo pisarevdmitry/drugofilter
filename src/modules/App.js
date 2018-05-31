@@ -64,7 +64,6 @@ class App extends VKAuth {
                 await this.auth();
                 this.allFriends = await this.callApi('friends.get', {fields: 'photo_100'});
                 this.showApp();
-                this.allFriends.items.forEach((friend) => friends.set(friend.id, friend));
                 this.renderFriends();
 
             } catch (e) {
